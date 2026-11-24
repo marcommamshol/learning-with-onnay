@@ -1,0 +1,19 @@
+{
+  "fps": 30,
+  "durasi": 720,
+  "adegan": {
+    "hook":     { "mulai": 0,   "selesai": 140 },
+    "kebutuhan":{ "mulai": 140, "selesai": 290 },
+    "program":  { "mulai": 290, "selesai": 440 },
+    "donasi":   { "mulai": 440, "selesai": 575 },
+    "ajakan":   { "mulai": 575, "selesai": 720 }
+  },
+  "langkahKaki": { "mulai": 4, "selesai": 128, "jarak": 12 },
+  "event": {
+    "hook1": 22, "hook2": 50, "hook3": 84,
+    "butuhLabel": 150, "butuh1": 170, "butuh2": 196, "butuh3": 222, "butuhAksen": 254,
+    "programJudul": 300, "program1": 330, "program2": 362, "program3": 394,
+    "donasiJudul": 450, "donasi1": 478, "donasi2": 504, "donasi3": 530,
+    "logo": 588, "ajakanJudul": 622, "ajakanAksen": 646, "tombol": 668
+  }
+}
