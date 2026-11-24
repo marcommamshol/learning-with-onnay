@@ -82,6 +82,14 @@
 
 Maksimal **3 font** dalam satu desain.
 
+### Logo
+File ada di [`hasil/logo/`](hasil/logo/), dan sumber yang bisa diedit ada di `logo.html`.
+- **Konsep:** matahari terbit (gradasi Oranye Fajar → Emas) yang dipotong dua garis cakrawala, muncul dari buku terbuka. Artinya: buku membuka cakrawala. Wordmark "cakrawala" memakai Archivo ExtraBold, huruf kecil.
+- `logo-gelap.webp`: wordmark Biru Malam, untuk latar terang (Krem).
+- `logo-terang.webp`: wordmark Krem, untuk latar gelap atau foto.
+- `logo-ikon.webp`: simbol saja, untuk foto profil atau favicon.
+- Jangan ubah warna matahari, jangan memutar atau merenggangkan logo, dan beri ruang kosong minimal setinggi simbol matahari di sekelilingnya.
+
 ## 7. Format ukuran
 | Format | Ukuran (px) | Rasio | Zona aman |
 |---|---|---|---|
