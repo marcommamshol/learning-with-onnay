@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Poster Donasi Buku</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Instrument+Serif:ital@1&family=Inter:wght@400;600&display=block" rel="stylesheet">
+<style>
+  :root{
+    --krem:#F6F4DD; --malam:#2C3459; --senja:#445574;
+    --oranye:#E75E19; --emas:#ECA912; --mentega:#EED680;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;background:var(--malam)}
+  .poster{
+    position:relative;width:1080px;height:1350px;padding:108px;overflow:hidden;
+    color:var(--krem);display:flex;flex-direction:column;align-items:center;
+    background:var(--malam) url("aset/foto-anak-berlari-sekolah.jpg") 54% 100% / auto 930px no-repeat;
+  }
+  /* overlay: Biru Malam di atas (untuk teks) memudar ke bening, lalu gelap lagi di bawah (untuk tombol) */
+  .poster::before{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(44,52,89,1) 0%, rgba(44,52,89,1) 30%, rgba(44,52,89,.5) 42%, rgba(44,52,89,0) 54%,
+                              rgba(44,52,89,0) 76%, rgba(44,52,89,.85) 100%),
+      linear-gradient(35deg, rgba(44,52,89,.25) 0%, rgba(236,169,18,.10) 100%);
+  }
+  /* grain film halus */
+  .poster::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .poster > *{position:relative;z-index:1}
+  .logo{height:84px;display:flex;align-items:center;justify-content:center}
+  .logo img{max-height:84px;max-width:320px;object-fit:contain}
+  .logo .ph{
+    width:220px;height:84px;border:2px dashed rgba(246,244,221,.6);border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font:600 18px/1 Inter;letter-spacing:.3em;color:rgba(246,244,221,.75);
+  }
+  .judul{margin-top:72px;text-align:center;text-shadow:0 2px 24px rgba(44,52,89,.45)}
+  .judul .a{font:800 88px/1 Archivo;letter-spacing:-.02em}
+  .judul .b{font:italic 400 104px/1.05 "Instrument Serif";color:var(--emas);margin-top:6px}
+  .ajakan{
+    margin-top:auto;display:inline-flex;align-items:center;gap:20px;
+    background:var(--oranye);color:var(--krem);border-radius:999px;
+    padding:28px 44px;font:600 34px/1 Inter;box-shadow:0 10px 30px rgba(44,52,89,.35);
+  }
+  .label{
+    position:absolute;z-index:1;font:400 16px/1 Inter;letter-spacing:.32em;text-transform:uppercase;color:var(--mentega);
+  }
+  .label.kiri{left:108px;bottom:56px}
+  .label.kanan{right:108px;bottom:56px}
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="logo"><img src="../logo.webp" alt="Logo Cakrawala"
+       onerror="this.parentNode.innerHTML='<div class=ph>LOGO</div>'"></div>
+  <div class="judul">
+    <div class="a">Satu buku,</div>
+    <div class="b">satu jendela dunia</div>
+  </div>
+  <div class="ajakan">Donasikan buku bekasmu →</div>
+  <div class="label kiri">Cakrawala</div>
+  <div class="label kanan">Pendidikan</div>
+</div>
+</body>
+</html>

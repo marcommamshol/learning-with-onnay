@@ -7,39 +7,46 @@
 <style>
   :root{
     --krem:#F6F4DD; --malam:#2C3459; --senja:#445574;
-    --oranye:#E75E19; --emas:#ECA912; --peach:#EE9958; --kabut:#AAB8C9;
+    --oranye:#E75E19; --emas:#ECA912; --mentega:#EED680;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{width:1080px;height:1350px;background:var(--krem)}
+  html,body{width:1080px;height:1350px;background:var(--malam)}
   .poster{
-    position:relative;width:1080px;height:1350px;padding:108px;
-    background:var(--krem);color:var(--malam);overflow:hidden;
-    display:flex;flex-direction:column;align-items:center;
+    position:relative;width:1080px;height:1350px;padding:108px;overflow:hidden;
+    color:var(--krem);display:flex;flex-direction:column;align-items:center;
+    background:var(--malam) url("aset/foto-anak-membaca-hutan.jpg") center 92% / cover no-repeat;
   }
-  /* grain kertas halus */
+  /* overlay: Biru Malam di atas (untuk teks) memudar ke bening, lalu gelap lagi di bawah (untuk tombol) */
+  .poster::before{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(44,52,89,.88) 0%, rgba(44,52,89,.55) 30%, rgba(44,52,89,0) 48%,
+                              rgba(44,52,89,0) 74%, rgba(44,52,89,.80) 100%),
+      linear-gradient(35deg, rgba(44,52,89,.25) 0%, rgba(236,169,18,.10) 100%);
+  }
+  /* grain film halus */
   .poster::after{
-    content:"";position:absolute;inset:0;pointer-events:none;opacity:.10;mix-blend-mode:multiply;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.17  0 0 0 0 0.2  0 0 0 0 0.35  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
+  .poster > *{position:relative;z-index:1}
   .logo{height:84px;display:flex;align-items:center;justify-content:center}
   .logo img{max-height:84px;max-width:320px;object-fit:contain}
   .logo .ph{
-    width:220px;height:84px;border:2px dashed var(--kabut);border-radius:12px;
+    width:220px;height:84px;border:2px dashed rgba(246,244,221,.6);border-radius:12px;
     display:flex;align-items:center;justify-content:center;
-    font:600 18px/1 Inter;letter-spacing:.3em;color:var(--kabut);
+    font:600 18px/1 Inter;letter-spacing:.3em;color:rgba(246,244,221,.75);
   }
-  .jendela{margin-top:150px;width:220px;height:260px;position:relative}
-  .judul{margin-top:84px;text-align:center}
-  .judul .a{font:800 92px/1 Archivo;letter-spacing:-.02em}
-  .judul .b{font:italic 400 108px/1.05 "Instrument Serif";color:var(--oranye);margin-top:6px}
+  .judul{margin-top:72px;text-align:center;text-shadow:0 2px 24px rgba(44,52,89,.45)}
+  .judul .a{font:800 88px/1 Archivo;letter-spacing:-.02em}
+  .judul .b{font:italic 400 104px/1.05 "Instrument Serif";color:var(--emas);margin-top:6px}
   .ajakan{
     margin-top:auto;display:inline-flex;align-items:center;gap:20px;
-    background:var(--malam);color:var(--krem);border-radius:999px;
-    padding:28px 44px;font:600 34px/1 Inter;
+    background:var(--oranye);color:var(--krem);border-radius:999px;
+    padding:28px 44px;font:600 34px/1 Inter;box-shadow:0 10px 30px rgba(44,52,89,.35);
   }
-  .ajakan .panah{color:var(--emas);font-size:38px}
   .label{
-    position:absolute;font:400 16px/1 Inter;letter-spacing:.32em;text-transform:uppercase;color:var(--senja);
+    position:absolute;z-index:1;font:400 16px/1 Inter;letter-spacing:.32em;text-transform:uppercase;color:var(--mentega);
   }
   .label.kiri{left:108px;bottom:56px}
   .label.kanan{right:108px;bottom:56px}
@@ -47,36 +54,13 @@
 </head>
 <body>
 <div class="poster">
-  <div class="logo" id="logo"><img src="../logo.webp" alt="Logo Cakrawala"
+  <div class="logo"><img src="../logo.webp" alt="Logo Cakrawala"
        onerror="this.parentNode.innerHTML='<div class=ph>LOGO</div>'"></div>
-
-  <!-- Motif orisinal: jendela melengkung berisi fajar yang naik diagonal, di atas buku terbuka -->
-  <svg class="jendela" viewBox="0 0 220 260" aria-hidden="true">
-    <defs>
-      <linearGradient id="fajar" x1="0" y1="1" x2="1" y2="0">
-        <stop offset="0" stop-color="#2C3459"/>
-        <stop offset=".55" stop-color="#EE9958"/>
-        <stop offset="1" stop-color="#ECA912"/>
-      </linearGradient>
-      <clipPath id="lengkung"><path d="M20 210 V110 A90 90 0 0 1 200 110 V210 Z"/></clipPath>
-    </defs>
-    <g clip-path="url(#lengkung)">
-      <rect x="0" y="0" width="220" height="220" fill="url(#fajar)"/>
-      <circle cx="132" cy="150" r="30" fill="#F6F4DD" opacity=".85"/>
-    </g>
-    <path d="M20 210 V110 A90 90 0 0 1 200 110 V210" fill="none" stroke="#2C3459" stroke-width="5"/>
-    <!-- buku terbuka -->
-    <path d="M110 214 C80 200 46 200 14 208 V244 C46 236 80 236 110 250 Z" fill="#2C3459"/>
-    <path d="M110 214 C140 200 174 200 206 208 V244 C174 236 140 236 110 250 Z" fill="#445574"/>
-  </svg>
-
   <div class="judul">
     <div class="a">Satu buku,</div>
     <div class="b">satu jendela dunia</div>
   </div>
-
-  <div class="ajakan">Donasikan buku bekasmu <span class="panah">→</span></div>
-
+  <div class="ajakan">Donasikan buku bekasmu →</div>
   <div class="label kiri">Cakrawala</div>
   <div class="label kanan">Pendidikan</div>
 </div>
