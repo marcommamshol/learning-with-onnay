@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Carousel Donasi Buku</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Instrument+Serif:ital@1&family=Inter:wght@400;600&display=block" rel="stylesheet">
+<style>
+  :root{
+    --krem:#F6F4DD; --malam:#2C3459; --senja:#445574;
+    --oranye:#E75E19; --emas:#ECA912; --peach:#EE9958; --mentega:#EED680; --kabut:#AAB8C9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#111;display:flex;flex-direction:column;gap:40px;padding:40px;width:max-content}
+  .slide{
+    position:relative;width:1080px;height:1350px;padding:108px;overflow:hidden;
+    display:flex;flex-direction:column;color:var(--krem);background:var(--malam);
+  }
+  .slide > *{position:relative;z-index:2}
+  /* grain film halus */
+  .slide::after{
+    content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.14;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .bg{position:absolute;inset:0;z-index:0}
+  .top{display:flex;justify-content:space-between;align-items:center;
+       font:600 18px/1 Inter;letter-spacing:.32em;text-transform:uppercase}
+  .kicker{font:600 20px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:var(--emas);margin-bottom:36px}
+  .h{font:800 96px/1.02 Archivo;letter-spacing:-.025em}
+  .s{font:italic 400 112px/1 "Instrument Serif";letter-spacing:-.01em}
+  .p{font:400 34px/1.45 Inter;max-width:780px;margin-top:44px}
+  .geser{position:absolute;right:108px;bottom:72px;z-index:2;font:600 18px/1 Inter;letter-spacing:.3em;text-transform:uppercase}
+  .garis{position:absolute;z-index:1;height:6px;border-radius:6px;transform-origin:left center}
+
+  /* 1 — Hook */
+  .s1 .bg{background:url("aset/foto-anak-berlari-sekolah.jpg") 50% 40% / cover no-repeat}
+  .s1 .bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(44,52,89,.85) 0%, rgba(44,52,89,.35) 12%, rgba(44,52,89,0) 24%, rgba(44,52,89,.15) 42%, rgba(44,52,89,.92) 66%, #2C3459 100%)}
+  .s1 .isi{margin-top:auto;margin-bottom:24px}
+  .s1 .h{font-size:88px}
+  .s1 .s{color:var(--emas)}
+  .s1 .top, .s1 .geser{color:var(--mentega)}
+
+  /* 2 — Masalah (dasar Biru Malam, pendukung Biru Senja) */
+  .s2 .blok{position:absolute;z-index:1;width:1500px;height:900px;left:-120px;bottom:-560px;
+    background:var(--senja);transform:rotate(-14deg);transform-origin:left top}
+  .s2 .isi{margin-top:150px}
+  .s2 .s{color:var(--emas)}
+  .s2 .top{color:var(--kabut)}
+  .s2 .p{color:var(--krem)}
+  .s2 .geser{color:var(--mentega)}
+
+  /* 3 — Solusi (dasar Krem, pendukung Biru Senja) */
+  .s3{background:var(--krem);color:var(--malam)}
+  .s3 .top{color:var(--senja)}
+  .s3 .kicker{color:var(--oranye)}
+  .s3 .s{color:var(--oranye)}
+  .s3 .isi{margin-top:190px}
+  .s3 .p{font-size:36px}
+  .s3 .p{color:var(--malam)}
+  .s3 .pita{margin-top:auto;display:flex;gap:18px}
+  .s3 .pita span{background:var(--senja);color:var(--krem);border-radius:999px;padding:18px 30px;font:600 24px/1 Inter}
+  .s3 .geser{color:var(--senja)}
+
+  /* 4 — Bukti */
+  .s4 .bg{background:url("aset/foto-anak-membaca-hutan.jpg") 50% 70% / cover no-repeat}
+  .s4 .bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, #2C3459 0%, rgba(44,52,89,.85) 24%, rgba(44,52,89,.15) 48%, rgba(44,52,89,0) 70%, rgba(44,52,89,.7) 100%),
+               linear-gradient(35deg, rgba(44,52,89,.2) 0%, rgba(236,169,18,.12) 100%)}
+  .s4 .isi{margin-top:64px;text-align:center}
+  .s4 .h{font-size:104px}
+  .s4 .s{color:var(--emas);font-size:120px}
+  .s4 .top, .s4 .geser{color:var(--mentega)}
+
+  /* 5 — Ajakan (dasar Krem, cahaya di kanan atas) */
+  .s5{background:var(--krem);color:var(--malam)}
+  .s5 .cahaya{position:absolute;z-index:1;width:1100px;height:1100px;right:-520px;top:-520px;border-radius:50%;
+    background:radial-gradient(circle, rgba(236,169,18,.55) 0%, rgba(238,153,88,.35) 35%, rgba(246,244,221,0) 70%)}
+  .s5 .top{color:var(--senja)}
+  .s5 .isi{margin-top:auto}
+  .s5 .s{color:var(--oranye)}
+  .s5 .ajakan{margin-top:64px;align-self:flex-start;display:inline-flex;align-items:center;
+    background:var(--oranye);color:var(--krem);border-radius:999px;padding:30px 48px;font:600 36px/1 Inter;
+    box-shadow:0 12px 30px rgba(44,52,89,.18)}
+  .s5 .kecil{margin-top:36px;font:400 26px/1.4 Inter;color:var(--senja)}
+</style>
+</head>
+<body>
+
+<!-- 1. HOOK -->
+<section class="slide s1" id="slide-1">
+  <div class="bg"></div>
+  <div class="top"><span>Cakrawala</span><span>01 / 05</span></div>
+  <div class="isi">
+    <div class="h">Dunia seorang anak<br>bisa dimulai dari</div>
+    <div class="s">satu buku.</div>
+  </div>
+  <div class="garis" style="left:108px;bottom:96px;width:220px;background:var(--emas);transform:rotate(-8deg)"></div>
+  <div class="geser">Geser →</div>
+</section>
+
+<!-- 2. MASALAH -->
+<section class="slide s2" id="slide-2">
+  <div class="blok"></div>
+  <div class="top"><span>Cakrawala</span><span>02 / 05</span></div>
+  <div class="isi">
+    <div class="kicker">Masalahnya</div>
+    <div class="h">Sudah sekolah, tapi buku bacaan</div>
+    <div class="s">masih jauh.</div>
+    <p class="p">Di banyak tempat di luar kota besar, buku bacaan masih sulit didapat. Padahal kebiasaan membaca tumbuh dari buku yang mudah dijangkau.</p>
+  </div>
+  <div class="geser">Geser →</div>
+</section>
+
+<!-- 3. SOLUSI -->
+<section class="slide s3" id="slide-3">
+  <div class="top"><span>Cakrawala</span><span>03 / 05</span></div>
+  <div class="isi">
+    <div class="kicker">Yang kami lakukan</div>
+    <div class="h">Pojok Baca,</div>
+    <div class="s">dekat rumah.</div>
+    <p class="p">Cakrawala mendampingi relawan setempat mengelola perpustakaan kecil, supaya anak-anak bisa meminjam dan membaca buku bersama.</p>
+  </div>
+  <div class="pita"><span>Dekat</span><span>Bersama warga</span><span>Berkelanjutan</span></div>
+  <div class="garis" style="right:108px;top:300px;width:200px;background:var(--emas);transform:rotate(-24deg)"></div>
+  <div class="geser" style="bottom:56px">Geser →</div>
+</section>
+
+<!-- 4. BUKTI -->
+<section class="slide s4" id="slide-4">
+  <div class="bg"></div>
+  <div class="top"><span>Cakrawala</span><span>04 / 05</span></div>
+  <div class="isi">
+    <div class="h">Satu buku,</div>
+    <div class="s">satu jendela dunia.</div>
+  </div>
+  <div class="geser">Geser →</div>
+</section>
+
+<!-- 5. AJAKAN -->
+<section class="slide s5" id="slide-5">
+  <div class="cahaya"></div>
+  <div class="top"><span>Cakrawala</span><span>05 / 05</span></div>
+  <div class="isi">
+    <div class="h">Punya buku yang sudah selesai dibaca?</div>
+    <div class="s">Bagikan jendelanya.</div>
+  </div>
+  <div class="ajakan">Donasikan buku bekasmu →</div>
+  <div class="kecil">Simpan dan bagikan postingan ini ke temanmu.</div>
+</section>
+
+</body>
+</html>
