@@ -1,28 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <title>Ikon Streak amalsholeh (belum aktif)</title>
   <defs>
-    <linearGradient id="api" x1="0.3" y1="1" x2="0.6" y2="0">
-      <stop offset="0" stop-color="#9AA0A6"/>
-      <stop offset="0.55" stop-color="#B7BCC1"/>
+    <linearGradient id="luar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#8F959B"/>
+      <stop offset="0.5" stop-color="#A3A9AE"/>
+      <stop offset="1" stop-color="#9AA0A6"/>
+    </linearGradient>
+    <linearGradient id="tengah" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#BCC1C5"/>
       <stop offset="1" stop-color="#CDD1D5"/>
     </linearGradient>
-    <linearGradient id="lidah" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0" stop-color="#D5D8DB"/>
-      <stop offset="1" stop-color="#E3E5E7"/>
+    <linearGradient id="inti" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#CDD1D5"/>
+      <stop offset="1" stop-color="#E6E8EA"/>
     </linearGradient>
   </defs>
-  <!-- lidah api kecil kiri -->
-  <path d="M150,250 C104,226 92,168 114,112 C130,152 160,174 168,212 C171,230 164,244 150,250 Z" fill="url(#lidah)"/>
-  <!-- percikan -->
-  <circle cx="352" cy="72" r="9" fill="#B7BCC1"/>
-  <circle cx="420" cy="60" r="7" fill="#CDD1D5"/>
-  <circle cx="160" cy="86" r="7" fill="#CDD1D5"/>
-  <!-- badan api -->
-  <path d="M256,488 C164,488 98,420 98,330 C98,262 136,214 168,176 C176,214 196,236 220,248 C210,180 234,96 304,32 C304,106 342,150 376,196 C402,232 414,280 414,330 C414,420 348,488 256,488 Z" fill="url(#api)"/>
-  <!-- sisi gelap kanan -->
-  <path d="M304,32 C304,106 342,150 376,196 C402,232 414,280 414,330 C414,420 348,488 256,488 C322,470 366,410 366,336 C366,250 316,190 304,120 C300,92 300,62 304,32 Z" fill="#80868B" opacity="0.55"/>
-  <!-- logo A amalsholeh -->
-  <g transform="translate(256,352) scale(0.56) translate(-135,-189)">
-    <path fill="#FFFFFF" fill-rule="evenodd" d="M42,40 C42,12 84,0 135,0 C186,0 228,12 228,40 L228,213 L270,213 L270,258 C246,258 228,274 228,300 L228,352 C228,370 204,378 173,378 L173,300 C173,274 156,258 135,258 C114,258 98,274 98,300 L98,378 C66,378 42,370 42,352 L42,300 C42,274 24,258 0,258 L0,213 L42,213 Z M98,213 L173,213 L173,110 C173,86 156,72 135,72 C114,72 98,86 98,110 Z"/>
+  <g transform="translate(148,186) scale(0.8)">
+    <!-- api luar: lidah api tumbuh dari badan huruf A -->
+    <path fill="url(#luar)" fill-rule="evenodd" d="M42,213 L42,178 C42,150 -28,128 -28,40 C-28,-20 -4,-62 18,-96 C24,-58 40,-40 62,-30 C54,-112 102,-172 172,-216 C160,-150 198,-112 230,-72 C240,-92 246,-114 242,-138 C284,-92 298,-30 298,40 C298,128 228,150 228,178 L228,213 L270,213 L270,258 C246,258 228,274 228,300 L228,352 C228,370 204,378 173,378 L173,300 C173,274 156,258 135,258 C114,258 98,274 98,300 L98,378 C66,378 42,370 42,352 L42,300 C42,274 24,258 0,258 L0,213 Z M98,213 L173,213 L173,110 C173,86 156,72 135,72 C114,72 98,86 98,110 Z"/>
+    <!-- api tengah dan inti -->
+    <path fill="url(#tengah)" d="M135,50 C90,50 62,20 64,-20 C66,-60 90,-82 98,-122 C116,-98 120,-82 124,-70 C130,-122 150,-152 178,-178 C172,-120 208,-90 208,-30 C208,20 180,50 135,50 Z"/>
+    <path fill="url(#inti)" d="M140,38 C112,38 98,20 100,-6 C102,-34 122,-48 130,-86 C150,-62 178,-42 178,-6 C178,20 164,38 140,38 Z"/>
   </g>
 </svg>
