@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Ikon Streak amalsholeh - Jejak Api</title>
+  <defs><linearGradient id="g4" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F06400"/><stop offset="1" stop-color="#FF8A0D"/></linearGradient><linearGradient id="t1" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF7B00"/><stop offset="1" stop-color="#FFC23A"/></linearGradient><linearGradient id="t2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FFB21F"/><stop offset="1" stop-color="#FFE89A"/></linearGradient></defs>
+  <g transform="translate(318,330) rotate(-72)">
+    <path fill="url(#t1)" d="M0,0 C-62,0 -96,-46 -92,-108 C-88,-160 -56,-188 -48,-240 C-30,-214 -18,-196 -14,-176 C0,-246 40,-296 92,-340 C80,-260 124,-210 122,-130 C120,-50 70,0 0,0 Z"/>
+    <path fill="url(#t2)" d="M10,-20 C-30,-20 -50,-50 -46,-90 C-42,-130 -10,-150 2,-200 C20,-160 60,-130 60,-80 C60,-44 40,-20 10,-20 Z"/>
+  </g>
+  <g transform="translate(232,104) scale(0.84)">
+    <path fill="#FFFFFF" d="{HOLE}"/>
+    <path fill="url(#g4)" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round" paint-order="stroke" fill-rule="evenodd" d="M42,40 C42,12 84,0 135,0 C186,0 228,12 228,40 L228,213 L270,213 L270,258 C246,258 228,274 228,300 L228,352 C228,370 204,378 173,378 L173,300 C173,274 156,258 135,258 C114,258 98,274 98,300 L98,378 C66,378 42,370 42,352 L42,300 C42,274 24,258 0,258 L0,213 L42,213 Z M98,213 L173,213 L173,110 C173,86 156,72 135,72 C114,72 98,86 98,110 Z"/>
+  </g>
+</svg>

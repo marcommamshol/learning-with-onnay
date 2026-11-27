@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Ikon Streak amalsholeh - Api di Gerbang</title>
+  <defs><linearGradient id="g2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F06400"/><stop offset="1" stop-color="#FF8A0D"/></linearGradient><linearGradient id="f2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF7B00"/><stop offset="1" stop-color="#FFD24A"/></linearGradient><linearGradient id="k2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FFC23A"/><stop offset="1" stop-color="#FFF0A8"/></linearGradient></defs>
+  <g transform="translate(121,90) scale(1)">
+    <path fill="url(#g2)" fill-rule="evenodd" d="M42,40 C42,12 84,0 135,0 C186,0 228,12 228,40 L228,213 L270,213 L270,258 C246,258 228,274 228,300 L228,352 C228,370 204,378 173,378 L173,300 C173,274 156,258 135,258 C114,258 98,274 98,300 L98,378 C66,378 42,370 42,352 L42,300 C42,274 24,258 0,258 L0,213 L42,213 Z M90,213 L181,213 L181,104 C181,78 160,62 135.5,62 C111,62 90,78 90,104 Z"/>
+    <path fill="url(#f2)" d="M135,206 C108,206 96,188 98,164 C100,134 124,118 128,82 C134,104 150,110 158,126 C162,114 162,104 160,94 C176,116 176,140 174,164 C172,190 160,206 135,206 Z"/>
+    <path fill="url(#k2)" d="M136,200 C120,200 112,190 113,176 C114,158 128,150 132,132 C144,148 158,158 158,176 C158,190 150,200 136,200 Z"/>
+  </g>
+  <circle cx="160" cy="70" r="9" fill="#FFB02E"/><circle cx="352" cy="58" r="7" fill="#FF8A0D"/><circle cx="388" cy="104" r="5" fill="#FFB02E"/>
+</svg>
